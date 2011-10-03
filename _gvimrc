@@ -1,0 +1,52 @@
+filetype plugin on
+filetype indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set hlsearch
+syntax enable
+
+set nocompatible
+set backspace=2
+set backspace=indent,eol,start
+
+autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+autocmd! BufNewFile,BufRead *.cs 
+            setlocal errorformat=\ %#%f(%l\\\,%c):\ %m 
+            \|setlocal makeprg=msbuild\ /nologo\ /v:q\ /property:GenerateFullPaths=true 
+
+vnoremap <Left> h
+vnoremap <Right> l
+vnoremap <Up> k
+vnoremap <Down> j
+
+set guioptions-=m "remove menu bar
+set guioptions-=T "remove toolbar
+set guioptions-=r "remove right-hand scroll bar
+
+colorscheme desertEx 
+
+set guifont=Consolas:h12:cANSI
+
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
+	
+" vim -b : edit binary using xxd-format!
+augroup Binary
+  au!
+  au BufReadPre  *.npy let &bin=1
+  au BufReadPost *.npy if &bin | %!xxd
+  au BufReadPost *.npy set ft=xxd | endif
+  au BufWritePre *.npy if &bin | %!xxd -r
+  au BufWritePre *.npy endif
+  au BufWritePost *.npy if &bin | %!xxd
+  au BufWritePost *.npy set nomod | endif
+augroup END
+
+map _t :TagbarOpenAutoClose<CR> 
+map _fl :FufLine<CR>
+
+let g:fuf_modesDisable = []
+
