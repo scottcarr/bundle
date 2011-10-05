@@ -49,6 +49,9 @@ augroup END
 map _fl :FufLine<CR>
 map _ft :FufTag<CR>
 map _fb :FufBuffer<CR>
+map _fc :FufMruCmd<CR>
+map _fd :FufDir<CR>
+map _ff :FufFile<CR>
 
 let g:fuf_modesDisable = []
 
