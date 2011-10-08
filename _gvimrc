@@ -26,8 +26,8 @@ set guioptions-=r "remove right-hand scroll bar
 
 colorscheme desertEx 
 
-"set guifont=Monospace\ 13
-set guifont=Consolas:h14:cANSI
+set guifont=Monospace\ 13
+"set guifont=Consolas:h14:cANSI
 
 set foldmethod=indent
 set foldnestmax=10
@@ -55,3 +55,4 @@ map _ff :FufFile<CR>
 
 let g:fuf_modesDisable = []
 
+autocmd FileType python set omnifunc=pythoncomplete#Complete
