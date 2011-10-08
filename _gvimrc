@@ -56,3 +56,9 @@ map _ff :FufFile<CR>
 let g:fuf_modesDisable = []
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+imap <M-h> <Left>
+imap <M-j> <Down>
+imap <M-k> <Up>
+imap <M-l> <Right>
+
