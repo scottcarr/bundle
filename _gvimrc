@@ -26,8 +26,7 @@ set guioptions-=r "remove right-hand scroll bar
 
 colorscheme desertEx 
 
-set guifont=Monospace\ 13
-"set guifont=Consolas:h14:cANSI
+"set guifont=Consolas:h12:cANSI
 
 set foldmethod=indent
 set foldnestmax=10
@@ -47,18 +46,22 @@ augroup Binary
 augroup END
 
 map _fl :FufLine<CR>
-map _ft :FufTag<CR>
-map _fb :FufBuffer<CR>
-map _fc :FufMruCmd<CR>
-map _fd :FufDir<CR>
 map _ff :FufFile<CR>
+map _fd :FufDir<CR>
+map _ft :FufTag<CR>
+map _fc :FufMruCmd<CR>
+map _fb :FufBuffer<CR>
 
 let g:fuf_modesDisable = []
 
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete 
+autocmd FileType python compiler pylint
+autocmd FileType python set makeprg=(echo\ '[%]';\ pylint\ %)
+
+let g:pylint_show_rate = 0
+let g:pylint_onwrite = 0
 
 imap <M-h> <Left>
 imap <M-j> <Down>
 imap <M-k> <Up>
 imap <M-l> <Right>
-
