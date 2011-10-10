@@ -27,6 +27,7 @@ set guioptions-=r "remove right-hand scroll bar
 colorscheme desertEx 
 
 "set guifont=Consolas:h12:cANSI
+"set guifont=Monospace\ 12
 
 set foldmethod=indent
 set foldnestmax=10
