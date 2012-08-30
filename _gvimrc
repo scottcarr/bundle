@@ -10,10 +10,10 @@ set nocompatible
 set backspace=2
 set backspace=indent,eol,start
 
-autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
-autocmd! BufNewFile,BufRead *.cs 
-            setlocal errorformat=\ %#%f(%l\\\,%c):\ %m 
-            \|setlocal makeprg=msbuild\ /nologo\ /v:q\ /property:GenerateFullPaths=true 
+"autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+"autocmd! BufNewFile,BufRead *.cs 
+"            setlocal errorformat=\ %#%f(%l\\\,%c):\ %m 
+"            \|setlocal makeprg=msbuild\ /nologo\ /v:q\ /property:GenerateFullPaths=true 
 
 vnoremap <Left> h
 vnoremap <Right> l
@@ -24,7 +24,7 @@ set guioptions-=m "remove menu bar
 set guioptions-=T "remove toolbar
 set guioptions-=r "remove right-hand scroll bar
 
-colorscheme desertEx 
+colorscheme winter 
 
 "set guifont=Consolas:h12:cANSI
 "set guifont=Monospace\ 12
@@ -66,3 +66,8 @@ imap <M-h> <Left>
 imap <M-j> <Down>
 imap <M-k> <Up>
 imap <M-l> <Right>
+
+set nu
+set lines=70
+set cc=80
+set columns=100
