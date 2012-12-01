@@ -32,14 +32,14 @@ export UPDATE_ZSH_DAYS=13
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git screen)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
 #PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}${VIMODE} '
-PROMPT='%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} %{$fg_bold[green]%}${VIMODE} %{$reset_color%}'
+PROMPT='%{$fg_bold[magenta]%}${VIMODE} %c$ %{$reset_color%}'
 
 # My hacked up vi-mode plugin:
 
@@ -68,9 +68,9 @@ function vi_mode_prompt_info() {
 
 # set VIMODE according to the current mode (default “[i]”)
 #
-VIMODE='[ins]'
+VIMODE='[i]'
 function zle-keymap-select {
-    VIMODE="${${KEYMAP/vicmd/[cmd]}/(main|viins)/[ins]}"
+    VIMODE="${${KEYMAP/vicmd/[n]}/(main|viins)/[i]}"
     zle reset-prompt
 }
 
@@ -79,7 +79,7 @@ zle -N zle-keymap-select
 # i don't like the right prompt
 ## define right prompt, if it wasn't defined by a theme
 #if [[ "$RPS1" == "" && "$RPROMPT" == "" ]]; then
-#  RPS1='$(vi_mode_prompt_info)'
+#  RPS1='${HOST}'
 #fi
 
 # fix the delay on escape
