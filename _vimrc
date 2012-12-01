@@ -12,9 +12,9 @@ set backspace=2
 set backspace=indent,eol,start
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+call pathogen#infect("~/bundle")
 call pathogen#helptags()
-colorscheme winter
+"colorscheme winter
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
 
