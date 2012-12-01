@@ -1,15 +1,3 @@
-filetype plugin on
-filetype indent on
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set hlsearch
-syntax enable
-
-set nocompatible
-set backspace=2
-set backspace=indent,eol,start
-
 "autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 "autocmd! BufNewFile,BufRead *.cs 
 "            setlocal errorformat=\ %#%f(%l\\\,%c):\ %m 
@@ -29,45 +17,6 @@ colorscheme winter
 "set guifont=Consolas:h12:cANSI
 "set guifont=Monospace\ 12
 
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
-set foldlevel=1
 	
-" vim -b : edit binary using xxd-format!
-augroup Binary
-  au!
-  au BufReadPre  *.npy let &bin=1
-  au BufReadPost *.npy if &bin | %!xxd
-  au BufReadPost *.npy set ft=xxd | endif
-  au BufWritePre *.npy if &bin | %!xxd -r
-  au BufWritePre *.npy endif
-  au BufWritePost *.npy if &bin | %!xxd
-  au BufWritePost *.npy set nomod | endif
-augroup END
 
-map _fl :FufLine<CR>
-map _ff :FufFile<CR>
-map _fd :FufDir<CR>
-map _ft :FufTag<CR>
-map _fc :FufMruCmd<CR>
-map _fb :FufBuffer<CR>
 
-let g:fuf_modesDisable = []
-
-autocmd FileType python set omnifunc=pythoncomplete#Complete 
-autocmd FileType python compiler pylint
-autocmd FileType python set makeprg=(echo\ '[%]';\ pylint\ %)
-
-let g:pylint_show_rate = 0
-let g:pylint_onwrite = 0
-
-imap <M-h> <Left>
-imap <M-j> <Down>
-imap <M-k> <Up>
-imap <M-l> <Right>
-
-set nu
-set lines=70
-set cc=80
-set columns=100

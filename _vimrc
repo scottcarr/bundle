@@ -1,7 +1,41 @@
 let g:fuf_modesDisable=[]
 filetype plugin on
 filetype indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set hlsearch
+syntax enable
+
+set nocompatible
+set backspace=2
+set backspace=indent,eol,start
+
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
-let g:vimwiki_list = [{'maxhi': 0, 'css_name': 'style.css', 'auto_export': 0, 'diary_index': 'diary','template_default': '', 'nested_syntaxes': {}, 'diary_sort': 'desc', 'path': '/home/scott/purdue/vimwiki/', 'diary_link_fmt': '%Y-%m-%d', 'template_ext': '', 'syntax': 'default', 'custom_wiki2html': '', 'index': 'index', 'diary_header': 'Diary','ext': '.wiki', 'path_html': '/home/scott/purdue/vimwiki_html/', 'temp': 0,'template_path': '/', 'list_margin': -1, 'diary_rel_path': 'diary/'}]
+colorscheme winter
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete 
+autocmd FileType python compiler pylint
+autocmd FileType python set makeprg=(echo\ '[%]';\ pylint\ %)
+
+let g:pylint_show_rate = 0
+let g:pylint_onwrite = 0
+
+imap <M-h> <Left>
+imap <M-j> <Down>
+imap <M-k> <Up>
+imap <M-l> <Right>
+
+set nu
+set lines=70
+set cc=80
+set columns=100
+
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
