@@ -38,6 +38,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+#PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}${VIMODE} '
+PROMPT='%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} %{$fg_bold[green]%}${VIMODE} %{$reset_color%}'
+
 # My hacked up vi-mode plugin:
 
 function zle-line-init zle-keymap-select {
@@ -78,3 +81,6 @@ zle -N zle-keymap-select
 #if [[ "$RPS1" == "" && "$RPROMPT" == "" ]]; then
 #  RPS1='$(vi_mode_prompt_info)'
 #fi
+
+# fix the delay on escape
+bindkey -rpM viins '^['
